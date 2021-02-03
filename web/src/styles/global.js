@@ -15,17 +15,16 @@ export default createGlobalStyle`
   html, body, #root {
     height: 100%;
     overflow-x: hidden;
+
   }
 
 
   body {
-    /* background: linear-gradient(-70deg #f0f0f7); */
     -webkit-font-smoothing: antialiased !important;
-
+    background-color: #4D4C4C;
   }
 
   body, input, button {
-
     font-size: 14px;
     font-family: 'Roboto', sans-serif;
   }
