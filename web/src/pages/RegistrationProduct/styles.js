@@ -1,42 +1,42 @@
 import styled from 'styled-components';
 import { darken } from 'polished';
 
-export const Container = styled.div`
-  width: 100vw;
-  height: 100vh;
+export const Container = styled.div` 
   font-size: 0.8rem;
+
   }
 
   .header-main {
-    background: var(--color-box-base);
+    background: #353535;
     width: 100%;
-    max-width: 74rem;
-    border: 0.1rem solid var(--color-line-in-white);
+    max-width: 60rem;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
     border-radius: 0.8rem;
     margin: -3rem auto 3.2rem;
     padding-top: 6.4rem;
-    overflow: hidden;
+    overflow: hidden;   
 
-    
+  input {
+    font: 1rem Archivo;
+    border-radius: 0.5rem;
+    height: 2.2rem;
+    padding: 0 1rem;
+    margin: 0 0 1rem;
+  }
 
-  input,
-  select {
-    width: 100%;
-    height: 3.6rem;
-    border-radius: 0.8rem;
-    background: var(--color-input-background);
-    border: 1px solid var(--color-line-in-white);
-    outline: 0;
-    padding: 0 1.6rem;
-    font: 1.6rem Archivo;
+  select {  
+    font: 1.5rem Archivo;
+    border-radius: 0.5rem;
+    height: 2.2rem;
+    padding: 0 1rem;
+    margin: 0 0 1rem;
   }
 
   .form-input {
     border: 0;
     padding: 0 2.4rem;
     margin-top: 0.1rem;
-
-    
 
     .button-list{
       width: 2.5rem;
@@ -64,7 +64,6 @@ export const Container = styled.div`
     button {
       background: none;
       border: 0;
-      /* margin: 1rem; */
       color: var(--color-primary);
       font: 700 1.6rem Archivo;
       cursor: pointer;
@@ -80,14 +79,14 @@ export const Container = styled.div`
   .header-title {
     label {
       font: 700 1.4rem Archivo;
-      color: var(--color-text-title);
-      margin-bottom: 1.4rem;
-      margin-top: 1rem;
+      color: #8945de;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
       display: flex;
       align-items: center;
       justify-content: space-between;
       width: 100%;
       padding-bottom: 1.6rem;
+      margin-top: 1rem;
     }
 
     textarea {
@@ -106,6 +105,7 @@ export const Container = styled.div`
       display: flex;
       align-items: center;
       font-size: 1.4rem;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
       line-height: 2.4rem;
       color: var(--color-text-complement);
     }
@@ -131,9 +131,7 @@ export const Container = styled.div`
         margin-right: 1rem;
       }
     }
-  }
-  
-  
+  }  
 
   @media (min-width: 1100px) {
     #container-input {
@@ -141,7 +139,7 @@ export const Container = styled.div`
 
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 210px 550px 1fr;
+      grid-template-rows: 180px 350px 1fr;
       grid-template-areas:
         'name name name'
         'campo2  campo4 campo3'
@@ -150,13 +148,12 @@ export const Container = styled.div`
     }
 
     .name-campo {
-      grid-area: name;
-      
+      grid-area: name;    
     }
 
     .campo2 {
       grid-area: campo2;
-      margin-right: 1rem;
+      margin-right: 2rem;
     }
 
     .campo3 {
@@ -180,6 +177,4 @@ export const Container = styled.div`
       grid-area: button;
     }
   }
-
-
 `;

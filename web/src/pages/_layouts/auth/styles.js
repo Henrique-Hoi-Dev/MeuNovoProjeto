@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
 
 export const Content = styled.div`
   width: 400px;
-  height: 370px;
+  height: auto;
 
   padding: 2rem;
   text-align: center;
@@ -23,7 +23,10 @@ export const Content = styled.div`
   border-radius: 0.8rem;
   background: rgba(0, 0, 0, 0.5);
 
-  -webkit-box-shadow: 1px 1px 3px 1px #999;
+  img {
+    width: 150px;
+    height: 200px;
+  }
 
   form {
     display: flex;

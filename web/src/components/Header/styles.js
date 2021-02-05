@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { darken } from 'polished';
 
 export const Container = styled.div`
-  position: absolute;
+  /* position: absolute; */
   width: 100%;
   height: 5rem;
 
@@ -13,7 +13,6 @@ export const Container = styled.div`
   border-bottom-right-radius: 20px;
 
   align-items: center;
-
   img {
     width: 65px;
     height: 65px;
@@ -21,7 +20,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Menu = styled.div`
+export const Header = styled.div`
   color: #9c98a6;
   display: flex;
   justify-content: space-between;
@@ -35,7 +34,7 @@ export const Menu = styled.div`
     justify-content: space-between;
   }
 
-  a {
+  svg {
     margin: 5px;
     align-items: center;
 

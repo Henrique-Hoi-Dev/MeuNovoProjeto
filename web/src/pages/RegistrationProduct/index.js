@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 import { Formik, Field, Form } from 'formik';
 import { toast } from 'react-toastify';
 
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   createProductRequest,
@@ -15,7 +15,6 @@ import {
 import Header from '~/components/HeaderRecord';
 import AvatarInput from './Avatarinput';
 import { FcHighPriority } from 'react-icons/fc';
-import { FaListUl } from 'react-icons/fa';
 import { Container } from './styles';
 
 const schema = Yup.object().shape({
@@ -93,14 +92,7 @@ export default function RegistrationProduct() {
               <Form className="form-input">
                 <div id="container-input" className="header-title">
                   <div className="name-campo">
-                    <label htmlFor="name">
-                      Nome do Produto
-                      <button className="button-list">
-                        <Link to="/list">
-                          <FaListUl color="#fff" size="30" />
-                        </Link>
-                      </button>
-                    </label>
+                    <label htmlFor="name">Nome do Produto</label>
                     <Field name="name" type="text" />,{' '}
                     <span>{formProps.errors.name}</span>
                   </div>

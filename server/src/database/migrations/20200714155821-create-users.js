@@ -16,8 +16,21 @@ module.exports = {
         allowNull: false,
         unique: true,
       },
+      dataNacimento: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
+      cpf: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        unique: true,
+      },
       avatar_id: {
         type: Sequelize.INTEGER,
+      },
+      cargo: {
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       password_hash: {
         type: Sequelize.STRING,

@@ -1,23 +1,72 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { signOut } from '../../store/modules/auth/actions';
+
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+import { makeStyles } from '@material-ui/core/styles';
 
 import { TiThMenu } from 'react-icons/ti';
-import { Container, Menu, Profile } from './styles';
-import logo from '../../assets/logo.png';
+import { Container, Header, Profile } from './styles';
 
-function Home() {
+export default function Home() {
   const profile = useSelector((state) => state.user.profile);
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const dispatch = useDispatch();
+  function handleSignOut() {
+    dispatch(signOut());
+  }
+
+  const useStyles = makeStyles({
+    root: {
+      borderRadius: 3,
+      border: 0,
+      color: '#333',
+      marginTop: '15px',
+      textDecoration: 'none',
+      fontWeight: 'bold',
+      fontSize: '16px',
+      opacity: 0.8,
+    },
+  });
+  const classes = useStyles();
 
   return (
     <Container>
-      {/* Menu ate o memomento só linka a lista */}
-      <Menu>
+      <Header>
         <div>
-          <Link to="/list">
-            <TiThMenu size={50} color="#4D4C4C" />
-          </Link>
+          <TiThMenu onClick={handleClick} size={50} color="#4D4C4C" />
+          <Menu
+            className={classes.root}
+            anchorEl={anchorEl}
+            keepMounted
+            open={Boolean(anchorEl)}
+            onClose={handleClose}
+          >
+            <MenuItem onClick={handleClose}>
+              <Link to="/perfil">Meu Perfil</Link>
+            </MenuItem>
+            <MenuItem onClick={handleClose}>
+              <Link to="/product">Cadastro de Produtos</Link>
+            </MenuItem>
+            <MenuItem onClick={handleClose}>
+              <Link to="/list">Lista de Produtos</Link>
+            </MenuItem>
+            <MenuItem onClick={handleSignOut}>Logar Outra conta</MenuItem>
+          </Menu>
         </div>
+
         <Profile>
           <nav>
             <h4>Profissional:</h4>
@@ -29,14 +78,12 @@ function Home() {
             src={
               profile.avatar
                 ? profile.avatar.url
-                : 'https://avatars.githubusercontent.com/u/62766753?s=400&u=24cd8dbd3643a8e36dd9e4347810621a87c2a579&v=4s'
+                : 'https://i.pinimg.com/474x/a6/70/05/a67005e9bf90bc529088205650784bba.jpg'
             }
             alt="avatar"
           />
         </Profile>
-      </Menu>
+      </Header>
     </Container>
   );
 }
-
-export default Home;
