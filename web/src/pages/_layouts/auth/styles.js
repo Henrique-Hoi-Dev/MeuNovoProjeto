@@ -43,8 +43,8 @@ export const Content = styled.div`
 
   input {
     width: 100%;
-    background: var(--color-input-background);
-    border: 1px solid var(--color-line-in-white);
+    background: #f8f8fc;
+    border: 1px solid #e6e6f0;
     font: 1rem Archivo;
 
     border-radius: 0.2rem;
@@ -62,8 +62,7 @@ export const Content = styled.div`
   button {
     margin: 5px 0 0;
     height: 44px;
-    background: #8398c9;
-    color: #333;
+    background: #6842c2;
     font-weight: bold;
     border-radius: 4px;
     font-size: 16px;
@@ -71,7 +70,7 @@ export const Content = styled.div`
 
     &:hover {
       color: ${darken(0.03, '#fff')};
-      background: ${darken(0.03, '#8398c9')};
+      background: ${darken(0.03, '#6842c2')};
     }
   }
 
@@ -97,8 +96,8 @@ export const Content = styled.div`
 
     input {
       width: 100%;
-      background: var(--color-input-background);
-      border: 1px solid var(--color-line-in-white);
+      background: #f8f8fc;
+      border: 1px solid #e6e6f0;
       font: 1rem Archivo;
 
       border-radius: 0.6rem;
@@ -130,7 +129,7 @@ export const Content = styled.div`
     }
 
     a {
-      color: var(--color-title-in-primary);
+      color: #ffffff;
       margin-top: 15px;
       text-decoration: none;
       font-weight: bold;

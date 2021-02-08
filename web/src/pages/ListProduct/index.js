@@ -39,15 +39,14 @@ const ProductList = ({ productList, handlerRemoveProduct }) => {
     <Container>
       <Header />
       <div className="header-main">
-        <h1>Produtos</h1>
         <form className="form-table">
           <table className="table-list">
             <thead>
               <tr className="table-title">
-                <td>Nome</td>
-                <td>Preço</td>
-                <td>Data</td>
-                <td>Descrição</td>
+                <td>Nome:</td>
+                <td>Preço:</td>
+                <td>Data:</td>
+                <td>Descrição:</td>
                 <td>Imagem</td>
               </tr>
             </thead>

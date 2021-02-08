@@ -59,7 +59,7 @@ export default function AvatarInput() {
           onChange={handleChange}
           ref={ref}
         />
-        Imagem do produto
+        <h4>Imagem do produto</h4>
       </label>
     </Container>
   );

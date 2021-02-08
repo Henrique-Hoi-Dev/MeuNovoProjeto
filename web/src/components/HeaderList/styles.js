@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const PageHeader = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: var(--color-primary);
+  background-color: #8945de;
 
   .header {
     width: 90%;
@@ -11,8 +11,9 @@ export const PageHeader = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: var(--color-text-in-primary);
+    color: #ffffff;
     padding: 1.6rem 0;
+    margin: 1rem auto -5rem;
 
     a {
       height: 3.2rem;
@@ -21,10 +22,6 @@ export const PageHeader = styled.div`
       :hover {
         opacity: 0.6;
       }
-    }
-
-    img {
-      height: 2.6rem;
     }
   }
 
@@ -37,13 +34,13 @@ export const PageHeader = styled.div`
     a {
       font: 700 3.6rem Archivo;
       line-height: 4.2rem;
-      color: var(--color-title-in-primary);
+      color: #ffffff;
     }
 
     h2 {
-      font: 700 3.6rem Archivo;
+      font: 600 3.1rem Archivo;
       line-height: 4.2rem;
-      color: var(--color-title-in-primary);
+      color: #ffffff;
     }
   }
 `;

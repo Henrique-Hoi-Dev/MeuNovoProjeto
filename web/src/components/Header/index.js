@@ -23,6 +23,7 @@ export default function Home() {
     setAnchorEl(null);
   };
 
+  // função para deslogar
   const dispatch = useDispatch();
   function handleSignOut() {
     dispatch(signOut());
@@ -32,14 +33,13 @@ export default function Home() {
     root: {
       borderRadius: 3,
       border: 0,
-      color: '#333',
-      marginTop: '15px',
+      color: '#9c98a6',
       textDecoration: 'none',
       fontWeight: 'bold',
       fontSize: '16px',
-      opacity: 0.8,
     },
   });
+
   const classes = useStyles();
 
   return (
@@ -48,22 +48,33 @@ export default function Home() {
         <div>
           <TiThMenu onClick={handleClick} size={50} color="#4D4C4C" />
           <Menu
-            className={classes.root}
             anchorEl={anchorEl}
             keepMounted
             open={Boolean(anchorEl)}
             onClose={handleClose}
           >
             <MenuItem onClick={handleClose}>
-              <Link to="/perfil">Meu Perfil</Link>
+              <Link className={classes.root} to="/perfil">
+                Meu Perfil
+              </Link>
             </MenuItem>
             <MenuItem onClick={handleClose}>
-              <Link to="/product">Cadastro de Produtos</Link>
+              <Link className={classes.root} to="/product">
+                Cadastro de Produtos
+              </Link>
             </MenuItem>
             <MenuItem onClick={handleClose}>
-              <Link to="/list">Lista de Produtos</Link>
+              <Link className={classes.root} to="/list">
+                Lista de Produtos
+              </Link>
             </MenuItem>
-            <MenuItem onClick={handleSignOut}>Logar Outra conta</MenuItem>
+            <MenuItem className={classes.root} onClick={handleSignOut}>
+              Logar Outra conta
+            </MenuItem>
+            <MenuItem className={classes.root} onClick={handleClose}>
+              {' '}
+              Caixa
+            </MenuItem>
           </Menu>
         </div>
 

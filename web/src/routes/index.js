@@ -17,7 +17,7 @@ function Routes() {
       <Route path="/" exact component={SignIn} />
       <Route path="/register" exact component={SignUp} />
 
-      <Route isPrivate path="/perfil" component={Profile} />
+      <Route isPrivate path="/perfil" exact component={Profile} />
       <Route isPrivate path="/home" exact component={Home} />
       <Route isPrivate path="/list" exact component={ListProduct} />
       <Route isPrivate path="/product" exact component={RegistrationProduct} />

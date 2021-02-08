@@ -9,10 +9,8 @@ export const Container = styled.div`
   background: #353535;
   box-sizing: border-box;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-
   align-items: center;
+
   img {
     width: 65px;
     height: 65px;
@@ -34,9 +32,13 @@ export const Header = styled.div`
     justify-content: space-between;
   }
 
+  a {
+    text-decoration: none;
+    font-weight: bold;
+  }
+
   svg {
-    margin: 5px;
-    align-items: center;
+    margin: 7px;
 
     border-radius: 5px;
     transition: background 0.5s;

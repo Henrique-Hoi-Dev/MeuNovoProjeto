@@ -6,15 +6,18 @@ export const Container = styled.div`
   height: 100vh;
 
   .header-main {
-    background: var(--color-box-base);
-    max-width: 74rem;
-    border: 0.1rem solid var(--color-line-in-white);
+    background: #353535;
+    max-width: 50rem;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
     border-radius: 0.8rem;
     margin: -3rem auto 3.2rem;
+    padding-top: 3rem;
+    overflow: hidden;
 
     h1 {
       margin: 3rem;
-      color: var(--color-text-base);
+      color: #6a6180;
       font: 700 2.6rem Archivo;
       cursor: pointer;
     }
@@ -23,9 +26,16 @@ export const Container = styled.div`
   .form-table {
     padding: 0 2.4rem;
 
-    table td {
-      border-bottom: 0.1rem solid var(--color-line-in-white);
-      border-radius: 0.8rem;
+    table {
+      background-color: #4d4c4c;
+      box-sizing: border-box;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+
+      td {
+        max-height: 5px;
+        border-bottom: 0.2rem solid #8945de;
+        border-radius: 0.8rem;
+      }
     }
 
     .avatar table td {
@@ -37,7 +47,8 @@ export const Container = styled.div`
       background: none;
       border: 0;
       margin: 1rem;
-      color: var(--color-primary);
+      padding-right: 1rem;
+      color: #8945de;
       font: 700 1.5rem Archivo;
       cursor: pointer;
     }
@@ -46,18 +57,19 @@ export const Container = styled.div`
   .table-list {
     width: 100%;
     border-radius: 0.8rem;
-    background: var(--color-input-background);
-    border: 1px solid var(--color-line-in-white);
-
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
     margin-bottom: 2.5rem;
 
     padding: 1.6rem;
     font: 1.1rem Archivo;
+    color: #9c98a6;
+    font-weight: bold;
 
     td,
     th {
       padding: 0.5rem;
-      text-align: left;
+      text-align: center;
     }
 
     a {

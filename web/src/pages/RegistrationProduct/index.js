@@ -77,6 +77,17 @@ export default function RegistrationProduct() {
       );
   };
 
+  function currencyFormat(num) {
+    if (num) {
+      return (
+        'R$' +
+        parseFloat(num)
+          .toFixed(2)
+          .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+      );
+    }
+  }
+
   return (
     <Container>
       <Header />
@@ -91,32 +102,40 @@ export default function RegistrationProduct() {
             return (
               <Form className="form-input">
                 <div id="container-input" className="header-title">
-                  <div className="name-campo">
-                    <label htmlFor="name">Nome do Produto</label>
-                    <Field name="name" type="text" />,{' '}
-                    <span>{formProps.errors.name}</span>
-                  </div>
+                  <div className="name-campo"></div>
+
                   <div className="campo2">
+                    <label htmlFor="name">Nome do Produto</label>
+                    <Field name="name" type="text" placeholder="Nome Produto" />
+                    <span>{formProps.errors.name}</span>
                     <label htmlFor="altura">Altura(cm)</label>
-                    <Field name="altura" type="number" />
+                    <Field name="altura" type="number" placeholder="Altura" />
                     <span>{formProps.errors.altura}</span>
-
                     <label htmlFor="largura">Largura(cm)</label>
-                    <Field name="largura" type="number" />
+                    <Field name="largura" type="number" placeholder="Largura" />
                     <span>{formProps.errors.largura}</span>
-
                     <label htmlFor="comprimento">Comprimento(cm)</label>
-                    <Field name="comprimento" type="number" />
+                    <Field
+                      name="comprimento"
+                      type="number"
+                      placeholder="Comprimento"
+                    />
                     <span>{formProps.errors.comprimento}</span>
                   </div>
 
                   <div className="campo3">
-                    <label htmlFor="peso">Peso do produto(g)</label>
-                    <Field name="peso" type="number" />
+                    <label htmlFor="peso">Peso do produto(kg)</label>
+                    <Field name="peso" type="number" placeholder="Peso(kg)" />
                     <span>{formProps.errors.peso}</span>
 
-                    <label htmlFor="preco">Preço(R$)</label>
-                    <Field name="preco" type="number" />
+                    <label htmlFor="preco">Preço($)</label>
+                    <Field
+                      name="preco"
+                      type="text"
+                      placeholder="Preço($)"
+                      onkeyup={currencyFormat}
+                    />
+
                     <span>{formProps.errors.preco}</span>
                     <ul>
                       <AvatarInput name="avatar_id" />
@@ -150,15 +169,20 @@ export default function RegistrationProduct() {
                     <label htmlFor="horario">Horário</label>
                     <Field name="horario" type="time" />
                     <span>{formProps.errors.horario}</span>
+
+                    <label htmlFor="codigo_de_barra">Código de barra</label>
+                    <Field
+                      name="codigo_de_barra"
+                      type="number"
+                      placeholder="Código de barras"
+                    />
+                    <span>{formProps.errors.codigo_de_barra}</span>
                   </div>
 
                   <div className="campo5">
                     <label htmlFor="descricao">Descrição</label>
                     <Field as="textarea" name="descricao" type="text" />
                     <span>{formProps.errors.descricao}</span>
-                    <label htmlFor="codigo_de_barra">Código de barra</label>
-                    <Field name="codigo_de_barra" type="number" />
-                    <span>{formProps.errors.codigo_de_barra}</span>
                   </div>
 
                   <footer className="buttons-container">

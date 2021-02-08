@@ -13,12 +13,15 @@ export const Container = styled.div`
 
   input {
     background: rgba(0, 0, 0, 0.1);
-    border: 0;
-    border-radius: 4px;
-    height: 42px;
     padding: 0 15px;
-    color: #fff;
-    margin: 0 0 10px;
+    font: 1rem Archivo;
+    border-radius: 0.5rem;
+    height: 2.2rem;
+    padding: 0 1rem;
+    margin: 0 0 1rem;
+    border: 2px solid #8945de;
+    font-weight: bold;
+    color: #9c98a6;
 
     &::placeholder {
       color: rgba(255, 255, 255, 0.7);
@@ -42,7 +45,7 @@ export const Container = styled.div`
   button {
     margin: 5px 0 0;
     height: 44px;
-    background: #23405c;
+    background: #8945de;
     font-weight: bold;
     border: 0;
     border-radius: 4px;
@@ -50,7 +53,7 @@ export const Container = styled.div`
     transition: background 0.2s;
 
     &:hover {
-      background: ${darken(0.03, '#23405c')};
+      background: ${darken(0.03, '#8945de')};
     }
   }
 
