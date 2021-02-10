@@ -64,11 +64,12 @@ export function* deleteProduct({ payload }) {
     yield call(api.delete, `/products/${payload.data}`);
 
     const response = yield call(api.get, `/products`);
+
     yield put(findAllProductSuccess(response.data));
 
     toast.success('Produto deletado');
   } catch (err) {
-    toast.error('Error deleting products checking data');
+    toast.error('Erro em excluir produto');
     yield put(productFailure());
   }
 }

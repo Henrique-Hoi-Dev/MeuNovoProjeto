@@ -38,7 +38,7 @@ export const PageHeader = styled.div`
     }
 
     h2 {
-      font: 700 3.6rem Archivo;
+      font: 600 3.1rem Archivo;
       line-height: 4.2rem;
       color: #ffffff;
     }

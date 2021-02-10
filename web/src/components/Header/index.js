@@ -12,7 +12,7 @@ import { Container, Header, Profile } from './styles';
 
 export default function Home() {
   const profile = useSelector((state) => state.user.profile);
-
+  console.log(profile);
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -83,8 +83,9 @@ export default function Home() {
             <h4>Profissional:</h4>
             <strong>{profile.name}</strong>
             <h4>Cargo:</h4>
-            <strong>{profile.name}</strong>
+            <strong>{profile.cargo ? profile.cargo : 'sem cargo'}</strong>
           </nav>
+
           <img
             src={
               profile.avatar

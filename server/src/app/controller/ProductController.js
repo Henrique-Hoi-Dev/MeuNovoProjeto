@@ -56,6 +56,7 @@ class ProductController {
   async deleteProduct(req, res) {
     try {
       const { id } = req.params;
+
       const product = await Product.destroy({
         where: {
           id: id,

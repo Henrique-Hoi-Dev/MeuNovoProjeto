@@ -7,8 +7,9 @@ class User extends Model {
       {
         name: Sequelize.STRING,
         email: Sequelize.STRING,
-        // cargo: Sequelize.STRING,
-        // data_nacimento: Sequelize.DATE,
+        cargo: Sequelize.STRING,
+        cpf: Sequelize.STRING,
+        dataNacimento: Sequelize.DATE,
         password: Sequelize.VIRTUAL,
         password_hash: Sequelize.STRING,
         provider: Sequelize.BOOLEAN,
