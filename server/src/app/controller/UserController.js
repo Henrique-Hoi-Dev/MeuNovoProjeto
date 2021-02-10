@@ -1,5 +1,6 @@
 import * as Yup from 'yup';
 import User from '../models/User';
+import File from '../models/File';
 
 class UserController {
   async store(req, res) {
@@ -7,12 +8,14 @@ class UserController {
       name: Yup.string().required(),
       email: Yup.string().email().required(),
       password: Yup.string().required().min(6),
+      cpf: Yup.string(),
+      data_nacimento: Yup.date(),
+      cargo: Yup.string(),
     });
 
     if (!(await schema.isValid(req.body))) {
       return res.status(400).json({ error: 'Falha na validação' });
     }
-
     // fazendo verificação email
     const userExist = await User.findOne({ where: { email: req.body.email } });
 
@@ -22,13 +25,24 @@ class UserController {
         .json({ error: 'Esse email de usuário já existe.' });
     }
 
-    const { id, name, email, provider } = await User.create(req.body);
+    const {
+      id,
+      name,
+      email,
+      provider,
+      cpf,
+      cargo,
+      data_nacimento,
+    } = await User.create(req.body);
 
     return res.json({
       id,
       name,
       email,
       provider,
+      cpf,
+      cargo,
+      data_nacimento,
     });
   }
 
@@ -80,7 +94,6 @@ class UserController {
         },
       ],
     });
-
     return res.json({
       id,
       name,
@@ -169,22 +182,22 @@ class UserController {
     }
   }
 
-  async deleteProject(req, res) {
-    try {
-      const { id } = req.params;
+  // async deleteProject(req, res) {
+  //   try {
+  //     const { id } = req.params;
 
-      const project = await Project.destroy({
-        where: {
-          id: id,
-        },
-      });
-      if (!project) {
-        return res.status(400).json({ message: 'project not found' });
-      }
-    } catch (error) {
-      console.log(error);
-      return res.status(400).json(error.message);
-    }
-  }
+  //     const project = await Project.destroy({
+  //       where: {
+  //         id: id,
+  //       },
+  //     });
+  //     if (!project) {
+  //       return res.status(400).json({ message: 'project not found' });
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //     return res.status(400).json(error.message);
+  //   }
+  // }
 }
 export default new UserController();

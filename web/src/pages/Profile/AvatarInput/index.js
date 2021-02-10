@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useField } from '@rocketseat/unform';
 import api from '~/services/api';
+
 import { useSelector } from 'react-redux';
 import { Container } from './styles';
 import { useParams } from 'react-router-dom';
@@ -44,12 +45,11 @@ export default function AvatarInput() {
     <Container>
       <label htmlFor="avatar">
         <img
-          id="avatar-img"
           src={
             preview ||
             'https://i.pinimg.com/474x/a6/70/05/a67005e9bf90bc529088205650784bba.jpg'
           }
-          alt="Imagem do Produto"
+          alt=""
         />
         <input
           type="file"
@@ -59,7 +59,6 @@ export default function AvatarInput() {
           onChange={handleChange}
           ref={ref}
         />
-        <h4>Imagem do produto</h4>
       </label>
     </Container>
   );

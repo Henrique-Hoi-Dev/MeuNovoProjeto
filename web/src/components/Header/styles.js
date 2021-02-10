@@ -2,16 +2,13 @@ import styled from 'styled-components';
 import { darken } from 'polished';
 
 export const Container = styled.div`
-  position: absolute;
+  /* position: absolute; */
   width: 100%;
   height: 5rem;
 
   background: #353535;
   box-sizing: border-box;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-
   align-items: center;
 
   img {
@@ -21,7 +18,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Menu = styled.div`
+export const Header = styled.div`
   color: #9c98a6;
   display: flex;
   justify-content: space-between;
@@ -36,8 +33,12 @@ export const Menu = styled.div`
   }
 
   a {
-    margin: 5px;
-    align-items: center;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  svg {
+    margin: 7px;
 
     border-radius: 5px;
     transition: background 0.5s;

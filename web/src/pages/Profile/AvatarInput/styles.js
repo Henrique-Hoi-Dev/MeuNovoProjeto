@@ -11,16 +11,12 @@ export const Container = styled.div`
       opacity: 0.7;
     }
 
-    h4 {
-      margin-left: 10px;
-    }
-
     img {
-      height: 100px;
-      width: 100px;
-      border-radius: 10%;
-      border: 5px solid rgba(255, 255, 255, 0.3);
-      background: #fff;
+      height: 120px;
+      width: 120px;
+      border-radius: 50%;
+      border: 3px solid #8945de;
+      background: rgba(255, 255, 255, 0.3);
     }
 
     input {
