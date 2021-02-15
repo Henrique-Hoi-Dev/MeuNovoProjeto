@@ -9,7 +9,7 @@ class UserController {
       email: Yup.string().email().required(),
       password: Yup.string().required().min(6),
       cpf: Yup.string(),
-      data_nacimento: Yup.date(),
+      data_nacimento: Yup.string(),
       cargo: Yup.string(),
     });
 
@@ -84,8 +84,22 @@ class UserController {
     }
 
     await user.update(req.body);
-
-    const { id, name, avatar } = await User.findByPk(req.userId, {
+    const {
+      id,
+      name,
+      avatar,
+      endereco,
+      cargo,
+      data_nacimento,
+      cpf,
+      cep,
+      logradouro,
+      complemento,
+      numero,
+      bairro,
+      cidade,
+      uf,
+    } = await User.findByPk(req.userId, {
       include: [
         {
           model: File,
@@ -94,110 +108,24 @@ class UserController {
         },
       ],
     });
+
     return res.json({
       id,
       name,
       email,
       avatar,
+      endereco,
+      cargo,
+      data_nacimento,
+      cpf,
+      cep,
+      logradouro,
+      complemento,
+      numero,
+      bairro,
+      cidade,
+      uf,
     });
   }
-
-  async findAllUser(req, res) {
-    try {
-      const { id } = req.params;
-
-      const user = await User.findAll({
-        attributes: ['name', 'id', 'email', 'provider'],
-        include: {
-          model: Project,
-          as: 'projects',
-          attributes: ['title', 'id'],
-          include: {
-            model: List,
-            as: 'lists',
-          },
-        },
-      });
-      if (!user) {
-        return res.status(401).json({ message: 'User not found' });
-      }
-
-      res.status(200).json(user);
-    } catch (error) {
-      res.status(400).json(error);
-    }
-  }
-
-  async findAllProjects(req, res, next) {
-    try {
-      const { id } = req.params;
-
-      const project = await Project.findAll({
-        include: {
-          model: List,
-          as: 'lists',
-        },
-      });
-      if (!project) {
-        return res.status(401).json({ message: 'Project not found' });
-      }
-
-      res.status(200).json(project);
-    } catch (error) {
-      res.status(400).json(error);
-    }
-  }
-
-  async findByIdProject(req, res) {
-    try {
-      const { id } = req.params;
-      const project = await Project.findAll({
-        where: {
-          id: id,
-        },
-        include: {
-          model: List,
-          as: 'lists',
-        },
-      });
-
-      if (!project) {
-        return res.status(401).json({ message: 'Project not found' });
-      }
-
-      res.status(200).json(project);
-    } catch (error) {
-      res.status(400).json(error);
-    }
-  }
-
-  async storeProject(req, res) {
-    try {
-      console.log(req.body);
-      const project = await Project.create(req.body);
-
-      return res.status(200).json(project);
-    } catch (error) {
-      return res.status(400).json(error);
-    }
-  }
-
-  // async deleteProject(req, res) {
-  //   try {
-  //     const { id } = req.params;
-
-  //     const project = await Project.destroy({
-  //       where: {
-  //         id: id,
-  //       },
-  //     });
-  //     if (!project) {
-  //       return res.status(400).json({ message: 'project not found' });
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //     return res.status(400).json(error.message);
-  //   }
-  // }
 }
 export default new UserController();

@@ -18,7 +18,6 @@ export function* signIn({ payload }) {
     const { token, user } = response.data;
 
     if (!user.provider) {
-      console.tron.error('Usuário não é prestador');
       toast.error('Usuário não é prestador');
       return;
     }
@@ -60,7 +59,6 @@ export function setToken({ payload }) {
 
   if (token) {
     api.defaults.headers.Authorization = `Bearer ${token} `;
-    console.log(token);
   }
 }
 
