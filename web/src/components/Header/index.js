@@ -57,6 +57,11 @@ export default function Home() {
             onClose={handleClose}
           >
             <MenuItem onClick={handleClose}>
+              <Link className={classes.root} to="/dashboard/inicio">
+                Inicio
+              </Link>
+            </MenuItem>
+            <MenuItem onClick={handleClose}>
               <Link className={classes.root} to="/perfil">
                 Perfil
               </Link>

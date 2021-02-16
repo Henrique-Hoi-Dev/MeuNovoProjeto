@@ -9,7 +9,7 @@ function HeaderList() {
   return (
     <PageHeader>
       <div className="header">
-        <Link to="/">
+        <Link to="/dashboard/inicio">
           <img src={backIcon} alt="voltar" height="40px" />
         </Link>
         <img src={logo} alt="voltar" height="100px" />

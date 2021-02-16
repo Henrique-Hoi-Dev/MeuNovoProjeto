@@ -20,7 +20,7 @@ export default function Profile() {
     { id: 'Colaborador', title: 'Colaborador' },
     { id: 'Diretor', title: 'Diretor' },
     { id: 'Gerente', title: 'Gerente' },
-    { id: 'CTO', title: 'CTO' },
+    { id: 'CEO', title: 'CEO' },
   ];
 
   const estados = [
