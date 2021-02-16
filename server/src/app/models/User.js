@@ -7,13 +7,20 @@ class User extends Model {
       {
         name: Sequelize.STRING,
         email: Sequelize.STRING,
-        cargo: Sequelize.STRING,
-        cpf: Sequelize.STRING,
-        dataNacimento: Sequelize.DATE,
         password: Sequelize.VIRTUAL,
         password_hash: Sequelize.STRING,
         provider: Sequelize.BOOLEAN,
+        cargo: Sequelize.STRING,
+        cpf: Sequelize.STRING,
+        data_nacimento: Sequelize.STRING,
         avatar_id: Sequelize.INTEGER,
+        cep: Sequelize.STRING,
+        logradouro: Sequelize.STRING,
+        complemento: Sequelize.STRING,
+        numero: Sequelize.STRING,
+        bairro: Sequelize.STRING,
+        cidade: Sequelize.STRING,
+        uf: Sequelize.STRING,
       },
       {
         sequelize,
@@ -32,7 +39,6 @@ class User extends Model {
 
   static associate(models) {
     this.belongsTo(models.File, { foreignKey: 'avatar_id', as: 'avatar' });
-    // this.hasMany(models.Project, { foreignKey: 'id_user', as: 'projects' });
   }
 
   checkPassword(password) {

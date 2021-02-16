@@ -8,7 +8,14 @@ export const Container = styled.div`
   form {
     display: flex;
     flex-direction: column;
-    margin-top: 30px;
+  }
+
+  h2 {
+    padding: 0.5rem;
+    font-weight: bold;
+
+    color: #9c98a6;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
   }
 
   input {
@@ -25,6 +32,23 @@ export const Container = styled.div`
 
     &::placeholder {
       color: rgba(255, 255, 255, 0.7);
+    }
+  }
+
+  select {
+    font: 1rem Archivo;
+    border-radius: 0.5rem;
+    height: 2.2rem;
+    padding: 0 1rem;
+    margin: 0 0 1rem;
+    border: 2px solid #8945de;
+    font-weight: bold;
+    color: #9c98a6;
+    background: rgba(0, 0, 0, 0.1);
+
+    ::-webkit-scrollbar {
+      width: 1px;
+      height: 10px;
     }
   }
 
@@ -47,7 +71,7 @@ export const Container = styled.div`
     height: 44px;
     background: #8945de;
     font-weight: bold;
-    border: 0;
+    margin-bottom: 1rem;
     border-radius: 4px;
     font-size: 16px;
     transition: background 0.2s;

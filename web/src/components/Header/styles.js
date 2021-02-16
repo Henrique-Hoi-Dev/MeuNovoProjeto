@@ -49,7 +49,7 @@ export const Header = styled.div`
   }
 `;
 
-export const Profile = styled.div`
+export const Perfil = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;

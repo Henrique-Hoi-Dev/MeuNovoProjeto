@@ -5,9 +5,9 @@ import Route from './Route';
 
 import SignIn from '~/pages/SignIn';
 import SignUp from '~/pages/SignUp';
-
 import Profile from '~/pages/Profile';
-import Home from '~/pages/Home';
+import Caixa from '~/pages/Caixa';
+import Dashboard from '~/pages/Dashboard';
 import ListProduct from '~/pages/ListProduct';
 import RegistrationProduct from '~/pages/RegistrationProduct';
 
@@ -18,7 +18,8 @@ function Routes() {
       <Route path="/register" exact component={SignUp} />
 
       <Route isPrivate path="/perfil" exact component={Profile} />
-      <Route isPrivate path="/home" exact component={Home} />
+      <Route isPrivate path="/caixa" exact component={Caixa} />
+      <Route isPrivate path="/dashboard/inicio" exact component={Dashboard} />
       <Route isPrivate path="/list" exact component={ListProduct} />
       <Route isPrivate path="/product" exact component={RegistrationProduct} />
       <Route

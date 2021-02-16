@@ -8,11 +8,11 @@ import MenuItem from '@material-ui/core/MenuItem';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { TiThMenu } from 'react-icons/ti';
-import { Container, Header, Profile } from './styles';
+import { Container, Header, Perfil } from './styles';
 
 export default function Home() {
   const profile = useSelector((state) => state.user.profile);
-  console.log(profile);
+
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -38,6 +38,9 @@ export default function Home() {
       fontWeight: 'bold',
       fontSize: '16px',
     },
+    exit: {
+      color: 'red',
+    },
   });
 
   const classes = useStyles();
@@ -54,31 +57,35 @@ export default function Home() {
             onClose={handleClose}
           >
             <MenuItem onClick={handleClose}>
+              <Link className={classes.root} to="/dashboard/inicio">
+                Inicio
+              </Link>
+            </MenuItem>
+            <MenuItem onClick={handleClose}>
               <Link className={classes.root} to="/perfil">
-                Meu Perfil
+                Perfil
               </Link>
             </MenuItem>
             <MenuItem onClick={handleClose}>
               <Link className={classes.root} to="/product">
-                Cadastro de Produtos
+                Cadastrar produtos
               </Link>
             </MenuItem>
             <MenuItem onClick={handleClose}>
               <Link className={classes.root} to="/list">
-                Lista de Produtos
+                Lista de produtos
               </Link>
             </MenuItem>
-            <MenuItem className={classes.root} onClick={handleSignOut}>
-              Logar Outra conta
-            </MenuItem>
             <MenuItem className={classes.root} onClick={handleClose}>
-              {' '}
               Caixa
+            </MenuItem>
+            <MenuItem className={classes.exit} onClick={handleSignOut}>
+              Sair
             </MenuItem>
           </Menu>
         </div>
 
-        <Profile>
+        <Perfil>
           <nav>
             <h4>Profissional:</h4>
             <strong>{profile.name}</strong>
@@ -94,7 +101,7 @@ export default function Home() {
             }
             alt="avatar"
           />
-        </Profile>
+        </Perfil>
       </Header>
     </Container>
   );

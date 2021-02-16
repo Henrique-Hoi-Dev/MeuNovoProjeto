@@ -2,8 +2,8 @@ import React from 'react';
 
 import { Container } from './styles';
 
-function Home() {
+function Caixa() {
   return <Container></Container>;
 }
 
-export default Home;
+export default Caixa;
