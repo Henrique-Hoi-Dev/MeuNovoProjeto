@@ -19,9 +19,8 @@ export default createGlobalStyle`
       width: 1px;
       height: 10px;
     }
+    
   }
-
-  
 
   body {
     -webkit-font-smoothing: antialiased !important;
@@ -31,10 +30,9 @@ export default createGlobalStyle`
       background-color: #4D4C4C;
       font-weight: bold;
       color: #9c98a6;
-    }
-
-  }
-
+    } 
+}
+  
   body, input, button {
     font-size: 14px;
     font-family: 'Roboto', sans-serif;

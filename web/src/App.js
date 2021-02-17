@@ -12,6 +12,8 @@ import { store, persistor } from './store';
 import Routes from './routes';
 import GlobalStyle from './styles/global';
 
+import 'assets/css/material-dashboard-react.css?v=1.9.0';
+
 function App() {
   return (
     <Provider store={store}>
