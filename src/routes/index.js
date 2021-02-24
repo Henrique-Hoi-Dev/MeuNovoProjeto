@@ -7,6 +7,7 @@ import SignIn from '~/pages/SignIn';
 import SignUp from '~/pages/SignUp';
 import Profile from '~/pages/Profile';
 import Caixa from '~/pages/Caixa';
+import Venda from '~/pages/Venda';
 import Dashboard from '~/pages/Dashboard';
 import ListProduct from '~/pages/ListProduct';
 import RegistrationProduct from '~/pages/RegistrationProduct';
@@ -19,13 +20,13 @@ function Routes() {
 
       <Route isPrivate path="/perfil" exact component={Profile} />
       <Route isPrivate path="/caixa" exact component={Caixa} />
+      <Route isPrivate path="/venda" exact component={Venda} />
       <Route isPrivate path="/dashboard/inicio" exact component={Dashboard} />
       <Route isPrivate path="/list" exact component={ListProduct} />
       <Route isPrivate path="/product" exact component={RegistrationProduct} />
       <Route
         isPrivate
         path="/product/:id"
-        exact
         render={(props) => <RegistrationProduct {...props} />}
       />
     </Switch>

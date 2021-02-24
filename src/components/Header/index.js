@@ -77,7 +77,9 @@ export default function Home() {
               </Link>
             </MenuItem>
             <MenuItem className={classes.root} onClick={handleClose}>
-              Caixa
+              <Link className={classes.root} to="/venda">
+                Venda
+              </Link>
             </MenuItem>
             <MenuItem className={classes.exit} onClick={handleSignOut}>
               Sair
