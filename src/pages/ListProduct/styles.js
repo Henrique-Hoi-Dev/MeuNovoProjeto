@@ -7,7 +7,7 @@ export const Container = styled.div`
 
   .header-main {
     background: #353535;
-    max-width: 50rem;
+    max-width: 70rem;
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
     border-radius: 0.8rem;
@@ -43,11 +43,12 @@ export const Container = styled.div`
     }
 
     button {
-      max-width: 2px;
+      display: flex;
+      justify-content: center;
+
       background: none;
       border: 0;
-      margin: 1rem;
-      padding-right: 1rem;
+      margin-left: 0.5rem;
       color: #8945de;
       font: 700 1.5rem Archivo;
       cursor: pointer;

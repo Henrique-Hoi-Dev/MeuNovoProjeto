@@ -4,14 +4,14 @@ import * as moment from 'moment';
 
 import { Container } from './styles';
 import Header from '../../components/HeaderList';
-import { FcEmptyTrash } from 'react-icons/fc';
+import { FcEmptyTrash, FcOk } from 'react-icons/fc';
 import { BiEditAlt } from 'react-icons/bi';
 
+import { Link } from 'react-router-dom';
 import {
   findAllProductRequest,
   deleteProductRequest,
 } from '../../store/modules/product/actions';
-import { Link } from 'react-router-dom';
 
 const ProductList = ({ productList, handlerRemoveProduct }) => {
   const dispatch = useDispatch();
@@ -80,6 +80,13 @@ const ProductList = ({ productList, handlerRemoveProduct }) => {
                       onClick={(e) => handlerRemoveProduct(e, produto.id)}
                     >
                       <FcEmptyTrash />
+                    </button>
+                  </td>
+                  <td>
+                    <button >
+                      <Link to={`/venda/${produto.id}`}>
+                        < FcOk/>
+                      </Link>
                     </button>
                   </td>
                 </tr>

@@ -7,12 +7,13 @@ export const Container = styled.div`
   box-sizing: border-box;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
   border-radius: 0.8rem;
-  margin: 5rem auto 3.2rem;
+
+  margin: 2rem auto 2rem;
   padding: 3rem;
   overflow: hidden;
 
   form {
-    display: grid;
+    display: grid; 
     grid-template-columns: 1fr 2fr;
     /* grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas:

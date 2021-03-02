@@ -25,10 +25,15 @@ function Routes() {
       <Route isPrivate path="/list" exact component={ListProduct} />
       <Route isPrivate path="/product" exact component={RegistrationProduct} />
       <Route
+        exact
         isPrivate
         path="/product/:id"
         render={(props) => <RegistrationProduct {...props} />}
       />
+      <Route
+      exact
+      isPrivate
+      path="/venda/:id"/>
     </Switch>
   );
 }
